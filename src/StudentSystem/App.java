@@ -129,6 +129,8 @@ public class App {
             User userInfo = new User(username, password, null, null);
             boolean result = checkUserInfo(list, userInfo);
             if(result){
+                System.out.println("***登录成功,现在开始使用学生管理系统***");
+                StudentSystem.startStudentSystem();
                 return;
             }else{
                 System.out.println("用户名或密码错误，你还剩"+(2-i)+"次机会");
@@ -272,7 +274,7 @@ public class App {
         for (int i = 0; i < list.size(); i++) {
             User user = list.get(i);
             if(user.getUsername().equals(userInfo.getUsername()) && user.getPassword().equals(userInfo.getPassword())){
-                System.out.println("***登录成功,现在开始使用学生管理系统***");
+
                 return true;
             }
         }
